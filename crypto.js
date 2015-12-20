@@ -1,9 +1,13 @@
 /* crypto.js --- simple obfuscation JS library Comments:
 
  Comments: It is not intenteded to be secure, but to hide simple
- information, but to hide information with a password key.
+ informations with a password key, to be to fast and be done by
+ hand. It may be used for hiding email from information retrivial
+ tools or most average users if the password is kept secret.
 
- DRY means don't repeat yourself.
+ GLOSSARY:
+ DRY: don't repeat yourself.
+
  Code:
  */
 
@@ -11,10 +15,12 @@
 var cnst = {
     /* Case sensitive */
     cs: true,
+    /* How many times should we repeat the enc/decryption */
     times: 1
 };
 
-/* Checks if string is all ascii characters */
+/* Utility function. Checks if string is all ascii characters and
+ * returns a boolean */
 function is_ascii(_string) {
     var string = _string;
 
@@ -29,7 +35,7 @@ function is_ascii(_string) {
 
 /* Constructor */
 function ObfusCrypto(_text, _case_s, _times) {
-    /* If text is emptu */
+    /* If text is empty */
     if(_text === '') {
         /* The object cannot be valid */
         return undefined;
@@ -40,18 +46,19 @@ function ObfusCrypto(_text, _case_s, _times) {
     }
     this.text = _text;
 
-    /* If the key should be case sensitive */
+    /* Whether the key should be case sensitive */
     /* If _case_s is not provided assign cnst.cs to attribute */
     this.case = _case_s || cnst.cs;
 
-    /* How many time should we encrypt
+    /* TODO: How many time should we encrypt
      * If _times is not provided assign cnst.times to attribute */
     this.times = _times || cnst.times;
 
     return true;
 }
 
-/* Method encrypting the text. The key is not kept */
+/* Member method encrypting the text. The key is not kept in memory
+ * for obvious reasons */
 ObfusCrypto.prototype.encrypt = function(_key, _encode) {
     /* Cryptotext contains the final result & clear_txt contains the
      * text to encrypt */
@@ -80,9 +87,11 @@ ObfusCrypto.prototype.encrypt = function(_key, _encode) {
         crypto_txt[i] = String.fromCharCode(clear_txt.charCodeAt(i) ^ _key.charCodeAt(_key.lenght%i));
     }
 
-    /* Make a string from the array & encode it in base64 */
+    /* Make a string from the array */
     this.text = crypto_txt.join('');
 
+    /* Encode the string since most characters won't be visible in the
+     * screen or may even break a script if embedded */
     if(_encode) {
         this.text = window.btoa(this.text);
     }
