@@ -2,25 +2,11 @@
 
 Simple  JavaScript library  to hide  content from  automatic retrieval
 tools. It's  technically a  cryptography tool  that would  encrypt the
-text, but the encryption shceme  is vulnerable to numerous attack that
+text, but the encryption scheme  is vulnerable to numerous attack that
 wouldn't   make  it   unsuitable  to   be  hidden   from  an   average
-hacker. That's why  it's more of a Obfuscation tool  (which can by the
+hacker. That's why it's more of  an Obfuscation tool (which can by the
 way always be cracked). It's  not configured to store other characters
-than ASCII (no foreign characters). It may be used to hide things, but
-shouldn't  be hard  to  decrypt  given the  nature  of the  encryption
-scheme. Cryptanalysis (reveal the messsage) could be done like it:
-
-* Search for 100 top popular email domain providers and find the part
-  of the key (password) that would correspond to that domain
-* Discard all keys containing non-printable characters
-* Search for completing the password accroding to a dictionnary
-
-In case the password is totally random & is longer than the text to
-encrypt, it may still be vulnerable, because it's only using printable
-characters.
-
-## Ressources
-* Online cryptography course by Dan Boneh from Stanford. On [Coursera](https://www.coursera.org/course/crypto) 
+than ASCII (no foreign characters).
 
 ## Example
 There's a simple [Demo](http://etienne.cc/obfucrypto/) not too fancy.
@@ -41,5 +27,24 @@ deobfuscate it, prompt for a password and write something like that:
     var realMail   = email.decrypt(password, true); 
 
 And `realMail` will contain `example@example.com`.
+
+## Comments
+
+ It may be used to hide things, but shouldn't be hard to decrypt given
+the  nature  of  the  encryption  scheme.  Cryptanalysis  (reveal  the
+messsage) could be done like it:
+
+* Search for top  100 email domain providers and find  the part of the
+  key (password) that would correspond to that domain
+* Discard all keys containing non-printable characters
+* Search for completing the password according to a dictionary
+
+In case the password is totally random & is longer than the text to
+encrypt, it may still be vulnerable, because it's only using printable
+characters.
+
+## Ressources
+* Online cryptography course by Dan Boneh from Stanford. On [Coursera](https://www.coursera.org/course/crypto) 
+
 
 Work in progress
