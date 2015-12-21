@@ -3,11 +3,11 @@
 Simple  JavaScript library  to hide  content from  automatic retrieval
 tools. It's  technically a  cryptography tool  that would  encrypt the
 text, but the encryption shceme  is vulnerable to numerous attack that
-wouldn't make it suitable to be  hidden from an average hacker. That's
-why it's more  of a Obfuscation tool  (which can by the  way always be
-cracked). It's not configured to store other characters than ASCII (no
-foreign characters). It  may be used to hide things,  but shouldn't be
-hard    to   decrypt    given   the    nature   of    the   encryption
+wouldn't   make  it   unsuitable  to   be  hidden   from  an   average
+hacker. That's why  it's more of a Obfuscation tool  (which can by the
+way always be cracked). It's  not configured to store other characters
+than ASCII (no foreign characters). It may be used to hide things, but
+shouldn't  be hard  to  decrypt  given the  nature  of the  encryption
 scheme. Cryptanalysis (reveal the messsage) could be done like it:
 
 * Search for 100 top popular email domain providers and find the part
@@ -22,7 +22,8 @@ characters.
 ## Ressources
 * Online cryptography course by Dan Boneh from Stanford. On [Coursera](https://www.coursera.org/course/crypto) 
 
-There's a simple [Demi](http://etienne.cc/obfucrypto/) not too fancy.
+## Example
+There's a simple [Demo](http://etienne.cc/obfucrypto/) not too fancy.
 
 To obfuscate a javascript variable. The  best way right now is to open
 browser console and execute the following:
