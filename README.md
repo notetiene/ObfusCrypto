@@ -39,5 +39,7 @@ deobfuscate it, prompt for a password and write something like that:
     var cryptotext = 'FRkSHgANFjMVGRIeAA0WXRMOHg=='; // same as last value returned
     var email      = new Obfuscrypto(cryptotext, false);
     var realMail   = email.decrypt(password, true); 
-    
+
+And `realMail` will contain `example@example.com`.
+
 Work in progress
