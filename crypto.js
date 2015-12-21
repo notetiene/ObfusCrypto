@@ -1,12 +1,20 @@
 /* crypto.js --- simple obfuscation JS library Comments:
 
- Comments: It is not intenteded to be secure, but to hide simple
- informations with a password key, to be to fast and be done by
- hand. It may be used for hiding email from information retrivial
- tools or most average users if the password is kept secret.
+ Comments:
+ It is  not intenteded to be  secure, but to hide  simple informations
+ with a password key,  to be fast and be done by hand.  It may be used
+ for hiding  email from  information retrivial  tools or  most average
+ users if the password is kept secret.
+
+ It's basically a Vigenère CIPHER where each characters of the CIPHERTEXT
 
  GLOSSARY:
- DRY: don't repeat yourself.
+ DRY: Don't repeat yourself.
+ CLEARTEXT: Text to encrypt
+ CODE: System of rules to convert information into an other set of information (like text to binary)
+ CIPHER: Algorithm used to encrypt or decrypt the text
+ CIPHERTEXT: Text that is the result of the encryption
+ ENCODING: Converts information to symbols for communication or storage
 
  Code:
  */
@@ -24,8 +32,9 @@ var cnst = {
 function is_ascii(_string) {
     var string = _string;
 
+    /* Loop into each characters of the string */
     for(var pos = 0; pos < string.length; pos++) {
-        /* If it's not a ascii character */
+        /* If it's not a ascii character, abort*/
         if(string.charCodeAt(pos) > 127) {
             return false;
         }
@@ -66,17 +75,17 @@ ObfusCrypto.prototype.encrypt = function(_key, _encode) {
     var clear_txt;
     var times = this.times;
 
-    /* If _encode is by default true if not set */
+    /* _encode by default true if not set */
     _encode = (_encode === undefined) || _encode;
 
-    /* To lower letters if not case sensitive */
+    /* To lower letters if case sensitive is not set */
     if(!this.case) {
         clear_txt = this.text.toLowerCase();
     } else {
         clear_txt = this.text;
     }
 
-    /* If not ascii characters */
+    /* If not all ascii characters */
     if(!is_ascii(_key)) {
         /* Flush text attribute */
         this.text = '';

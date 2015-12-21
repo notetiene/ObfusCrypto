@@ -3,10 +3,10 @@
 Simple  JavaScript library  to hide  content from  automatic retrieval
 tools. It's  technically a  cryptography tool  that would  encrypt the
 text, but the encryption scheme  is vulnerable to numerous attack that
-wouldn't   make  it   unsuitable  to   be  hidden   from  an   average
-hacker. That's why it's more of  an Obfuscation tool (which can by the
-way always be cracked). It's  not configured to store other characters
-than ASCII (no foreign characters).
+wouldn't make it suitable to be  hidden from an average hacker. That's
+why it's more of  an Obfuscation tool (which can by  the way always be
+cracked). It's not configured to store other characters than ASCII (no
+foreign characters).
 
 ## Example
 There's a simple [Demo](http://etienne.cc/obfucrypto/) not too fancy.
