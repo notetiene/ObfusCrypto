@@ -6,16 +6,85 @@
  for hiding  email from  information retrivial  tools or  most average
  users if the password is kept secret.
 
- It's basically a Vigenère CIPHER where each characters of the CIPHERTEXT
+ It's  basically  a  VIGENÈRE  CIPHER where  each  characters  of  the
+ CIPHERTEXT
 
+ ------------------------------
  GLOSSARY:
- DRY: Don't repeat yourself.
- CLEARTEXT: Text to encrypt
- CODE: System of rules to convert information into an other set of information (like text to binary)
- CIPHER: Algorithm used to encrypt or decrypt the text
- CIPHERTEXT: Text that is the result of the encryption
- ENCODING: Converts information to symbols for communication or storage
 
+ ASCII: American  Standard Code  for Information  Exchange. It  is the
+ most widely supported encoding format. It contains all the letters of
+ the  English  language,  numbers  &  special  characters  of  the  US
+ keyboard.
+
+ BINARY  NUMBER: Number  expressed  in the  binary  numeral system  or
+ base-2  numeral  system  which  represent numeric  values  using  two
+ different symbols: typically  0 (zero) and 1 (one).  Like the decimal
+ number, except  that there  is only two  numeric symbol.  See DECIMAL
+ NUMBER. EG:
+    DECIMAL: 9+1 = 10
+    BINARY:  1+1 = 10
+ Note that  in the binary system  10 means 2 since  the numeric symbol
+ "2" doesn't exist.
+
+ DECIMAL NUMBER: Number expressed has  ten as its base. By definition,
+ it  contains 10  letters  from 0-9  (0 being  one  also). When  digit
+ becomes 9, if we add 1 to it, an other digit is added to the left and
+ the current digit becomes 0.
+
+ DRY: Don't repeat yourself.
+
+ CAESAR  CIPHER:  One  of  simplest &  most  widely  known  encryption
+ techniques. It is a type of  SUBSTITUTION CIPHER in which each letter
+ in the  PLAINTEXT is  replaced by  a letter of  some fixed  number of
+ position down the alphabet.
+
+ CLEARTEXT: See PLAINTEXT
+
+ CODE: System  of rules to  convert information  into an other  set of
+ information (like text to BINARY NUMBER)
+
+ CIPHER: Algorithm used to encrypt or decrypt the text
+
+ CIPHERTEXT: Text that is the result of the encryption
+
+ ENCODING:  Converts  information  to  symbols  for  communication  or
+ storage
+
+ ENCRYPTING/ENCRYPTION: Process of encoding messages or information in
+ such a way that only authorized  parties can read it. Encryption does
+ not of itself prevent interception, but denies the message content to
+ the interceptor.
+
+ EXCLUSIVE OR (XOR): LOGICAL OPERATOR  that output true only when both
+ inputs  differ (one  must  be true  &  the other  must  be false).  A
+ representation  of   this  LOGICAL  OPERATOR  in   plain  English  is
+ "Either... or", meaning  that both cannot be  true.  In cryptography,
+ its properties are unique in the  way XOR render the CIPHERTEXT to be
+ completly unrelated unless someone has  the key while being simple to
+ implement. It is the operator used by the OTP.
+
+ MODULAR ARITHMETIC: Subset of  arithmetic for integers, where numbers
+ "wrap  around" up  reaching a  certain value  — the  modulus. A  good
+ example could be the 12-hour clock,  in which the day is divided into
+ two 12-hour periods. If  the time is 7:00 now, then  8 hours later it
+ will  be 3:00.  Usual addition  would  suggest that  the latter  time
+ should be 7+8=15.
+
+ OTP (ONE  TIME PAD): ENCRYPTION  technique that cannot be  cracked if
+ used  correctly. In  this technique,  a  PLAINTEXT is  paired with  a
+ random secret  KEY. Then each  bit or  character of the  PLAINTEXT is
+ ENCRYPTED  by  combining  it  with with  the  correscponding  bit  or
+ character from the pad using MODULAR ADDITION.
+
+ PLAINTEXT: Information a sender wishes to transmit to a receiver.
+
+ VIGENÈRE CIPHER: is a method of ENCRYPTING alphabetic text by using a
+ series of different CEASAR CIPHERS based  on the letters of a keyword
+ (or password).
+
+ Glossary ends here
+ ------------------------------
  Code:
  */
 
