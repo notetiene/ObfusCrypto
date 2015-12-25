@@ -162,7 +162,7 @@ ObfusCrypto.prototype.encrypt = function(_key, _encode) {
     }
 
     for(var i = 0; i < clear_txt.length; i++) {
-        crypto_txt[i] = String.fromCharCode(clear_txt.charCodeAt(i) ^ _key.charCodeAt(_key.lenght%i));
+        crypto_txt[i] = String.fromCharCode(clear_txt.charCodeAt(i) ^ _key.charCodeAt(i%_key.length));
     }
 
     /* Make a string from the array */
