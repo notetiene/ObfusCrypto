@@ -89,11 +89,11 @@
  */
 
 /* Constants */
-var cnst = {
+var CNST = {
     /* Case sensitive */
-    cs: true,
+    CS: true,
     /* How many times should we repeat the enc/decryption */
-    times: 1
+    TIMES: 1
 };
 
 /* Utility function. Checks if string is all ascii characters and
@@ -125,12 +125,12 @@ function ObfusCrypto(_text, _case_s, _times) {
     this.text = _text;
 
     /* Whether the key should be case sensitive */
-    /* If _case_s is not provided assign cnst.cs to attribute */
-    this.case = _case_s || cnst.cs;
+    /* If _case_s is not provided assign CNST.CS to attribute */
+    this.case = _case_s || CNST.CS;
 
     /* TODO: How many time should we encrypt
-     * If _times is not provided assign cnst.times to attribute */
-    this.times = _times || cnst.times;
+     * If _times is not provided assign CNST.TIMES to attribute */
+    this.times = _times || CNST.TIMES;
 
     return true;
 }
