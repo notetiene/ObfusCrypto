@@ -181,7 +181,12 @@ ObfusCrypto.prototype.encrypt = function(_key, _encode) {
 
 ObfusCrypto.prototype.decrypt = function (_key) {
     /* Remove base encoding for when it's encrypted */
-    this.text = window.atob(this.text);
+    try {
+        this.text = window.atob(this.text);
+    }
+    catch(e) {
+        return -1;
+    }
     /* Call encrypt function again since it's a reverse function like
      * if you did 1/(1/x) => x (sort of) */
     this.encrypt(_key, false);
