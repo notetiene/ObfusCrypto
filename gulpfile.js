@@ -21,11 +21,11 @@ var project    = 'ObfusCrypto';
 // "_js" = concat
 gulp.task('_js', function() {
     return gulp.src(source + jsdir + '*.js')
-        .pipe(concat('main.js'))
+        .pipe(concat(project.toLocaleLowerCase() + '.js'))
         .pipe(gulp.dest(build + jsdir));
 });
 
-// "vendor" = Copy vendor files to dist
+// "_vendor" = Copy vendor files to dist
 gulp.task('_vendor', function() {
     return gulp.src(source + jsdir + vendordir + '*.js')
         .pipe(gulp.dest(build + jsdir + vendordir));
