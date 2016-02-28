@@ -1,0 +1,33 @@
+{
+    "boss": true,
+    "browser"       : true,
+    "curly": true,
+    "debug"         : true,
+    "devel"         : true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "globals": {
+        "$": false,
+        "jquery":false
+    },
+    "immed": true,
+    "jquery"        : true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "node": true,
+    "passfail"      : false,
+    "predef"        : [
+        "classify",
+        "CSSPropertySyntaxError",
+        "CSSParser",
+        "NotArrayError",
+        "NotArrayStringsError",
+        "NotStringError",
+        "typeok"
+    ],
+    "quotmark": "single",
+    "sub": true,
+    "undef": true,
+    "unused": true
+}
