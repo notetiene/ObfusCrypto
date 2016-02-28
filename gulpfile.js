@@ -11,7 +11,6 @@ var uglify     = require('gulp-uglify');
 // var clean      = require('gulp-clean'); // Clean
 
 // Paths
-var vendordir  = 'vendor/**/dist/';
 var source     = 'src/';
 var build      = 'dist/';
 var jsdir      = 'js/';
@@ -25,26 +24,12 @@ gulp.task('_js', function() {
         .pipe(gulp.dest(build + jsdir));
 });
 
-// "_vendor" = Copy vendor files to dist
-gulp.task('_vendor_js', function() {
-    return gulp.src(vendordir + jsdir + '*.js')
-        .pipe(concat('vendor.js'))
-        .pipe(gulp.dest(build + jsdir));
-});
-
 // "js" = uglify + concat
 gulp.task('js', function() {
     return gulp.src(source + jsdir + '*.js')
         .pipe(uglify())
         .pipe(concat(project.toLocaleLowerCase() + '.js'))
         .pipe(gulp.dest(build + jsdir));
-});
-
-// "vendor" = Copy & uglify vendor files to dist
-gulp.task('vendor', function() {
-    return gulp.src(source + jsdir + vendordir + '*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest(build + jsdir + vendordir));
 });
 
 // ========================================
@@ -56,9 +41,9 @@ gulp.task('watch', function () {
 });
 
 // "dist" = Make a distribution (build)
-gulp.task('dist', gulpsync.sync(['clean-dist', 'js', 'vendor']));
+gulp.task('dist', gulpsync.sync(['clean-dist', 'js']));
 
 // "build" = Make a simple build without optimizations
-gulp.task('build', gulpsync.sync(['_js', ['_vendor_js']]));
+gulp.task('build', gulpsync.sync(['_js']));
 // Default task
 gulp.task('default', ['build']);
